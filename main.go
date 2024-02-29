@@ -25,8 +25,9 @@ func main() {
 				cmd = exec.Command("osascript", "-e", `tell application "System Events" to tell appearance preferences to set dark mode to not dark mode`)
 			}
 			err := cmd.Run()
-			fmt.Println("dark mode: " + darkStatus)
-			log.Printf("Command finished with error: %v", err)
+			if err != nil {
+				log.Printf("Command finished with error: %v", err)
+			}
 		}
 	}
 }
