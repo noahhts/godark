@@ -9,6 +9,12 @@ import (
 
 func main() {
 	numArgs := len(os.Args) - 1
+	if numArgs == 0 {
+		fmt.Println(`dark tells your system's appearance preferences to set dark mode to:
+			on			dark mode on
+			off			dark mode off
+			toggle	toggle dark mode`)
+	}
 	if numArgs < 1 || numArgs > 1 {
 		fmt.Println("dark takes one argument: on, off, or toggle")
 	} else {
